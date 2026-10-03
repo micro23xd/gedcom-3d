@@ -1,0 +1,2 @@
+# Format fixtures must keep their exact bytes: CR, CRLF, Windows-1252.
+test/fixtures/*.ged -text

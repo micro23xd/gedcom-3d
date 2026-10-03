@@ -1,0 +1,49 @@
+{
+  "name": "gedcom-3d",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "A GEDCOM family tree as a 3D graph laid out along time. Runs entirely in the browser.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "build:pages": "tsc --noEmit && VITE_DEFAULT_GED=demo/demo.ged vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "demo": "node scripts/make-demo.mjs",
+    "check:offline": "node scripts/check-offline.mjs"
+  },
+  "dependencies": {
+    "3d-force-graph": "^1.80.0",
+    "lil-gui": "^0.21.0",
+    "three": "^0.186.1",
+    "three-spritetext": "^1.10.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.3",
+    "@types/three": "^0.186.0",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.1",
+    "vitest": "^5.0.2"
+  },
+  "license": "MIT",
+  "author": "Dominik Bauer",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/micro23xd/gedcom-3d.git"
+  },
+  "homepage": "https://micro23xd.github.io/gedcom-3d/",
+  "keywords": [
+    "gedcom",
+    "genealogy",
+    "family-tree",
+    "3d",
+    "three.js",
+    "visualization",
+    "timeline"
+  ],
+  "engines": {
+    "node": ">=20"
+  }
+}

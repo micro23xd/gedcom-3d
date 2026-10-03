@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="A GEDCOM family tree as a 3D graph laid out along time. Runs entirely in the browser.">
+  <link rel="icon" href="data:,">
+  <title>gedcom-3d</title>
+</head>
+<body>
+  <div id="scene"></div>
+  <div id="loading">
+    <div class="msg" data-i18n="app.loading"></div>
+    <div class="empty-state">
+      <p class="why"></p>
+      <button class="primary" data-open data-i18n="app.openFile"></button>
+      <p class="muted" data-i18n="app.openHint"></p>
+    </div>
+  </div>
+  <div id="drop"><div data-i18n="app.drop"></div></div>
+
+  <div id="top">
+    <div class="brand"><span data-i18n="app.title"></span> <em data-i18n="app.subtitle"></em> <small id="source"></small></div>
+    <div class="search">
+      <input id="search" type="search" data-i18n-placeholder="app.search" autocomplete="off" spellcheck="false">
+      <ul id="results" hidden></ul>
+    </div>
+    <button class="open" data-open data-i18n="app.open" data-i18n-title="app.openTitle"></button>
+  </div>
+
+  <aside id="panel"></aside>
+  <div id="legend"></div>
+
+  <div id="timebar">
+    <label class="cursor"><input id="cursor" type="checkbox"> <span data-i18n="app.cursor"></span></label>
+    <input id="year" type="range" min="1500" max="2030" step="1" data-i18n-title="app.timeTravel">
+    <output id="year-out">1850</output>
+    <button id="help-toggle" data-i18n-title="app.helpTitle">?</button>
+    <div id="help">
+      <b data-i18n="help.title"></b>
+      <div data-i18n-html="help.mouse"></div>
+      <div data-i18n-html="help.time"></div>
+      <div data-i18n-html="help.click"></div>
+      <div data-i18n-html="help.keys"></div>
+      <div data-i18n-html="help.open"></div>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "default": {},
+  "lifelines": {
+    "personShape": "lifeline",
+    "linkOpacity": 0.22,
+    "nodeSize": 1.6,
+    "labels": "near"
+  },
+  "tunnel": {
+    "axis": "depth",
+    "grid": true,
+    "gridRadius": 200,
+    "fogDensity": 0.0008,
+    "particles": true
+  },
+  "evidence": {
+    "colorBy": "evidence",
+    "showSources": true,
+    "bloom": false,
+    "linkOpacity": 0.18
+  }
+}
