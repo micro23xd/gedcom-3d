@@ -15,7 +15,13 @@ import {decodeGedcom} from '../src/gedcom/decode';
 import {buildTree} from '../src/model';
 
 const {GEDCOM_PATH, EXPECTED_JSON, ROOT, PENDING_SOURCE} = process.env;
-const ready = !!GEDCOM_PATH && !!EXPECTED_JSON && existsSync(GEDCOM_PATH) && existsSync(EXPECTED_JSON);
+const ready = !!GEDCOM_PATH && !!EXPECTED_JSON;
+
+// Configured but pointing nowhere is an error, not a skip: a caller relying
+// on this check must not get a green run that compared nothing.
+for (const path of [GEDCOM_PATH, EXPECTED_JSON]) {
+  if (ready && !existsSync(path as string)) throw new Error(`crosscheck: ${path} does not exist`);
+}
 
 describe.skipIf(!ready)('evidence matches the external classifier', () => {
   const want = ready ? JSON.parse(readFileSync(EXPECTED_JSON as string, 'utf-8')) : {};
